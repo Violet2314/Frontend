@@ -1,0 +1,381 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+:root {
+    --primary-color: #007af3;
+    --dark-color: #141414;
+}
+
+body {
+    box-sizing: border-box;
+    /* 元素的 width 和 height 将包含内容、padding 和 border */
+    -webkit-font-smoothing: antialiased;
+    background: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins";
+}
+
+ul {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: #fff;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+p {
+    margin: 0.5em 0;
+}
+
+.show {
+    width: 100%;
+    position: relative;
+    background: url("/image/PixPin_2024-07-26_19-40-56.png") no-repeat center center/cover;
+    ;
+}
+
+.show::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: inset 120px 100px 250px rgba(255, 255, 255, 0.41), inset -120px -100px 250px #00000050;
+}
+
+.show-top {
+    display: flex;
+    justify-content: center;
+    /* 水平居中 */
+    text-align: center;
+    position: relative;
+    height: 90px;
+    z-index: 2;
+}
+
+.show-top span {
+    font-size: clamp(1.5em, 2vw + 1em, 2em);
+    font-weight: bold;
+    line-height: 1.3em;
+    margin-top: 0.7em;
+}
+
+.show-top a {
+    background: var(--primary-color);
+    font-weight: bold;
+    font-size: clamp(1em, 1vw + 0.5em, 1.5em);
+    padding: 0.3em 0.6em;
+    border-radius: 0.7em;
+    position: absolute;
+    /* 绝对定位 */
+    right: clamp(0.5em, 1vw + 0.2em, 2em);
+    /* 移动到最右边 */
+    top: 35%;
+    /* 垂直居中 */
+    transform: translateY(-50%);
+    /* 修正 top: 50% 的偏移 */
+
+    &:hover {
+        background: #0068d6;
+    }
+}
+
+.show .content {
+    z-index: 2;
+    position: relative;
+    width: 65%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 9em;
+
+    h1 {
+        line-height: 1.1;
+        font-weight: 700;
+        font-size: clamp(1.5em, 2vw + 1em, 3em);
+        transition: font-size 0.3s ease-in-out;
+    }
+
+    p {
+        color: #fff;
+        font-weight: 400;
+        font-size: clamp(1.1em, 1vw + 1em, 1.9em);
+        margin: 0 0 2em 0;
+    }
+
+    a {
+        background: var(--primary-color);
+        padding: 0.6em 1.2em;
+        font-size: clamp(1.1em, 1vw + 1em, 1.9em);
+        border-radius: 0.7em;
+        margin: 0 auto clamp(2em, 2vw + 2em, 4em);
+        display: inline-block;
+        text-align: center;
+
+        &:hover {
+            background: #0068d6;
+        }
+    }
+}
+
+.tabs {
+    display: none;
+}
+
+.tab-content {
+    color: #fff;
+    padding: 3em 0;
+    background: #161616ec;
+}
+
+.tab-1-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    p {
+        font-size: clamp(1em, 1vw + 0.85em, 1.5em);
+    }
+
+    a {
+        display: block;
+        width: 40%;
+        margin: 2em auto;  
+        background: var(--primary-color);
+        border-radius: 1em;
+        font-size: clamp(1em, 1vw + 0.85em, 1.5em);
+        padding: 0.6em 1.2em;
+
+        &:hover {
+            background: #0068d6;
+        }
+    }
+
+    img {
+        margin: 1em;
+        width: 50%;
+        border-radius: 1em;
+    }
+}
+
+.tab-2-content {
+    margin: 2em 0;
+    display: flex;
+    position: relative;
+
+    .text-2 {
+        display: flex;
+        flex-direction: column;
+        /* 垂直排列 */
+        margin-right: 1em;
+        /* 添加右侧间距，确保文本和图片之间有一定距离 */
+    }
+
+    img {
+        width: 60%;
+    }
+}
+
+.text-2-1 {
+    font-size: clamp(1.2em, 2vw + 0.8em, 3em);
+    position: absolute;
+    top: 51%;
+    right: 13%;
+
+    span {
+        font-size: clamp(1.3em, 2vw + 0.9em, 3.1em);
+        color: var(--primary-color);
+        font-weight: 700;
+        line-height: 1.2em;
+        text-shadow: 20px 11px 6px black;
+    }
+}
+
+.text-2-2 {
+    font-size: clamp(1.1em, 2vw + 0.7em, 2.9em);
+    position: absolute;
+    top: 60%;
+    right: 4%;
+}
+
+.tab-3-content {
+    margin: 3em 0;
+    text-align: center;
+    overflow-x: auto;
+    width: 100%;
+    font-size: clamp(1.1em, 1vw + 1em, 1.9em);
+
+    a {
+        background: var(--primary-color);
+        padding: 0.6em 1.2em;
+        font-size: clamp(1.1em, 1vw + 1em, 1.9em);
+        border-radius: 0.7em;
+        margin: 1.5em 0 0 0;
+        display: inline-block;
+        text-align: center;
+
+        &:hover {
+            background: #0068d6;
+        }
+    }
+
+    .table {
+        width: 100%;
+        margin-top: 2rem;
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    .table thead th {
+        text-transform: uppercase;
+        padding: 0.8rem;
+    }
+
+    .table tbody {
+        display: table-row-group;
+        vertical-align: middle;
+        border-color: inherit;
+    }
+
+    .table tbody tr td {
+        color: #999;
+        padding: 0.8rem 1.2rem;
+        text-align: center;
+    }
+
+    .table tbody tr td:first-child {
+        text-align: left;
+    }
+
+    .table tbody tr:nth-child(odd) {
+        background: #222;
+    }
+}
+
+.tab-3-content::-webkit-scrollbar {
+    height: 8px;
+    /* 控制滚动条的高度（水平滚动条） */
+}
+
+.tab-3-content::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: var(--primary-color);
+    /* 滚动条滑块颜色 */
+}
+
+.tab-3-content::-webkit-scrollbar-track {
+    background: #333;
+    /* 滚动条轨道背景颜色 */
+}
+
+.tab-3-content::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(27, 140, 236, 0.5);
+    /* 鼠标悬停时滑块颜色 */
+}
+
+.footer a {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.footer p {
+    margin-bottom: 1.5rem;
+}
+
+.footer li {
+    line-height: 1.9;
+}
+
+.footer .lang-select {
+    width: 100%;
+    margin-top: 2rem;
+    color: #999;
+    background-color: #000;
+    background-image: none;
+    border: 1px solid #333;
+    padding: 1rem 1.2rem;
+    border-radius: 5px;
+}
+
+@media only screen and (min-width: 560px) {
+    .footer .footer-cols {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 2rem;
+    }
+}
+
+@media only screen and (min-width: 1450px) {
+
+    .container,
+    .footer {
+        width: 1320px;
+        margin: 0 auto;
+    }
+
+    .shownow {
+        display: block !important;
+        opacity: 1 !important;
+        transition: font-size 0.3s ease-in-out;
+    }
+
+    .tabs {
+        display: flex !important;
+        background: var(--dark-color);
+        padding-top: 1rem;
+        border-bottom: 3px solid #3d3d3d;
+        border-right: none;
+    }
+
+    .tab-border {
+        border-bottom: var(--primary-color) 4px solid;
+    }
+
+    .tabs .container {
+        display: grid;
+        color: #ffffff98;
+
+        p {
+            font-size: 1.2em;
+            padding-top: 0.5em;
+        }
+
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1rem;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .tabs .container>div {
+        padding: 1.5rem 0;
+    }
+
+    .tabs .container>div:hover {
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .tab-1-content,
+    .tab-2-content,
+    .tab-3-content {
+        display: none;
+        opacity: 0;
+    }
+}
