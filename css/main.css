@@ -34,8 +34,18 @@ section {
     }
 
     .container {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: row;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: row;
+           -moz-box-orient: horizontal;
+           -moz-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
         place-content: space-between;
     }
 }
@@ -118,7 +128,8 @@ section.fuction {
                 width: 20px;
                 height: 20px;
                 background-image: url("/image/bullet.svg");
-                background-size: contain;
+                -o-background-size: contain;
+                   background-size: contain;
                 margin-right: 0.5em;
             }
         }
@@ -167,7 +178,9 @@ textarea {
     margin-bottom: 1em;
     border: 1px solid gray;
     border-radius: 0.3em;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 .send {
@@ -236,7 +249,11 @@ nav {
 @media only screen and (min-width: 768px) {
     .navbar.container {
         display: grid;
-        justify-content: unset;
+        -webkit-box-pack: unset;
+        -webkit-justify-content: unset;
+           -moz-box-pack: unset;
+            -ms-flex-pack: unset;
+                justify-content: unset;
         grid-template-columns: 182px auto;
     }
 
@@ -249,9 +266,17 @@ nav {
     /* 是优先级的问题导致单写nav不显示，因为css不是从上到下来渲染的，
     所以单写nav优先级别不够，但是加上navbar之后更加具体，优先级更高 */
     .navbar nav {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
         display: flex;
         /* !important;  这样可以提高优先级别*/
-        justify-content: space-between;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+           -moz-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
         background: none;
         position: unset;
         height: auto;
@@ -259,6 +284,10 @@ nav {
         padding: 0;
 
         ul {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
             display: flex;
         }
 
@@ -311,8 +340,16 @@ nav {
     }
 
     .main .container {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-between;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+           -moz-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
         text-align: left;
 
         .left {
@@ -331,6 +368,10 @@ nav {
     }
 
     .main .main-button {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
         display: flex;
 
         .learn-more {
@@ -370,8 +411,16 @@ nav {
     }
 
     .testimonials-section ul {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+           -moz-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
 
         li {
             margin: 0 1em;
@@ -382,6 +431,10 @@ nav {
         position: relative;
 
         .container {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
             display: flex;
         }
 
