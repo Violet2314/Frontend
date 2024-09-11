@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 
 :root {
@@ -6,9 +7,7 @@
 }
 
 body {
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     /* 元素的 width 和 height 将包含内容、padding 和 border */
     -webkit-font-smoothing: antialiased;
     background: #f2f2f2;
@@ -41,7 +40,6 @@ p {
     width: 100%;
     position: relative;
     background: url("/image/PixPin_2024-07-26_19-40-56.png") no-repeat center center/cover;
-    ;
 }
 
 .show::after {
@@ -53,21 +51,12 @@ p {
     height: 100%;
     z-index: 1;
     background: rgba(0, 0, 0, 0.6);
-    -webkit-box-shadow: inset 120px 100px 250px rgba(255, 255, 255, 0.41), inset -120px -100px 250px #00000050;
-            box-shadow: inset 120px 100px 250px rgba(255, 255, 255, 0.41), inset -120px -100px 250px #00000050;
+    box-shadow: inset 120px 100px 250px rgba(255, 255, 255, 0.41), inset -120px -100px 250px #00000050;
 }
 
 .show-top {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-       -moz-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
     /* 水平居中 */
     text-align: center;
     position: relative;
@@ -76,7 +65,7 @@ p {
 }
 
 .show-top span {
-    font-size: clamp(1.5em, 2vw + 1em, 2em);
+    font-size: clamp(1.5em, calc(1em + 2vw), 2em);
     font-weight: bold;
     line-height: 1.3em;
     margin-top: 0.7em;
@@ -85,25 +74,21 @@ p {
 .show-top a {
     background: var(--primary-color);
     font-weight: bold;
-    font-size: clamp(1em, 1vw + 0.5em, 1.5em);
+    font-size: clamp(1em, calc(1vw + 0.5em), 1.5em);
     padding: 0.3em 0.6em;
     border-radius: 0.7em;
     position: absolute;
     /* 绝对定位 */
-    right: clamp(0.5em, 1vw + 0.2em, 2em);
+    right: clamp(0.5em, calc(1vw + 0.2em), 2em);
     /* 移动到最右边 */
     top: 35%;
     /* 垂直居中 */
-    -webkit-transform: translateY(-50%);
-       -moz-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-         -o-transform: translateY(-50%);
-            transform: translateY(-50%);
+    transform: translateY(-50%);
     /* 修正 top: 50% 的偏移 */
+}
 
-    &:hover {
-        background: #0068d6;
-    }
+.show-top a:hover {
+    background: #0068d6;
 }
 
 .show .content {
@@ -111,61 +96,40 @@ p {
     position: relative;
     width: 65%;
     margin: auto;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-       -moz-box-orient: vertical;
-       -moz-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-       -moz-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-       -moz-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     margin-top: 9em;
+}
 
-    h1 {
-        line-height: 1.1;
-        font-weight: 700;
-        font-size: clamp(1.5em, 2vw + 1em, 3em);
-        -webkit-transition: font-size 0.3s ease-in-out;
-        -o-transition: font-size 0.3s ease-in-out;
-        -moz-transition: font-size 0.3s ease-in-out;
-        transition: font-size 0.3s ease-in-out;
-    }
+.show .content h1 {
+    line-height: 1.1;
+    font-weight: 700;
+    font-size: clamp(1.5em, calc(2vw + 1em), 3em);
+    transition: font-size 0.3s ease-in-out;
+}
 
-    p {
-        color: #fff;
-        font-weight: 400;
-        font-size: clamp(1.1em, 1vw + 1em, 1.9em);
-        margin: 0 0 2em 0;
-    }
+.show .content p {
+    color: #fff;
+    font-weight: 400;
+    font-size: clamp(1.1em, calc(1vw + 1em), 1.9em);
+    margin: 0 0 2em 0;
+}
 
-    a {
-        background: var(--primary-color);
-        padding: 0.6em 1.2em;
-        font-size: clamp(1.1em, 1vw + 1em, 1.9em);
-        border-radius: 0.7em;
-        margin: 0 auto clamp(2em, 2vw + 2em, 4em);
-        display: inline-block;
-        text-align: center;
+.show .content a {
+    background: var(--primary-color);
+    padding: 0.6em 1.2em;
+    font-size: clamp(1.1em, calc(1vw + 1em), 1.9em);
+    border-radius: 0.7em;
+    margin: 0 auto clamp(2em, calc(2vw + 2em), 4em);
+    display: inline-block;
+    text-align: center;
+}
 
-        &:hover {
-            background: #0068d6;
-        }
-    }
+.show .content a:hover {
+    background: #0068d6;
 }
 
 .tabs {
@@ -179,104 +143,72 @@ p {
 }
 
 .tab-1-content {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-       -moz-box-orient: vertical;
-       -moz-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-       -moz-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-       -moz-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+}
 
-    p {
-        font-size: clamp(1em, 1vw + 0.85em, 1.5em);
-    }
+.tab-1-content p {
+    font-size: clamp(1em, calc(1vw + 0.85em), 1.5em);
+}
 
-    a {
-        display: block;
-        width: 40%;
-        margin: 2em auto;  
-        background: var(--primary-color);
-        border-radius: 1em;
-        font-size: clamp(1em, 1vw + 0.85em, 1.5em);
-        padding: 0.6em 1.2em;
+.tab-1-content a {
+    display: block;
+    width: 40%;
+    margin: 2em auto;
+    background: var(--primary-color);
+    border-radius: 1em;
+    font-size: clamp(1em, calc(1vw + 0.85em), 1.5em);
+    padding: 0.6em 1.2em;
+}
 
-        &:hover {
-            background: #0068d6;
-        }
-    }
+.tab-1-content a:hover {
+    background: #0068d6;
+}
 
-    img {
-        margin: 1em;
-        width: 50%;
-        border-radius: 1em;
-    }
+.tab-1-content img {
+    margin: 1em;
+    width: 50%;
+    border-radius: 1em;
 }
 
 .tab-2-content {
     margin: 2em 0;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
     display: flex;
     position: relative;
+}
 
-    .text-2 {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -moz-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -webkit-flex-direction: column;
-           -moz-box-orient: vertical;
-           -moz-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
-        /* 垂直排列 */
-        margin-right: 1em;
-        /* 添加右侧间距，确保文本和图片之间有一定距离 */
-    }
+.tab-2-content .text-2 {
+    display: flex;
+    flex-direction: column;
+    /* 垂直排列 */
+    margin-right: 1em;
+    /* 添加右侧间距，确保文本和图片之间有一定距离 */
+}
 
-    img {
-        width: 60%;
-    }
+.tab-2-content img {
+    width: 60%;
 }
 
 .text-2-1 {
-    font-size: clamp(1.2em, 2vw + 0.8em, 3em);
+    font-size: clamp(1.2em, calc(2vw + 0.8em), 3em);
     position: absolute;
     top: 51%;
     right: 13%;
+}
 
-    span {
-        font-size: clamp(1.3em, 2vw + 0.9em, 3.1em);
-        color: var(--primary-color);
-        font-weight: 700;
-        line-height: 1.2em;
-        text-shadow: 20px 11px 6px black;
-    }
+.text-2-1 span {
+    font-size: clamp(1.3em, calc(2vw + 0.9em), 3.1em);
+    color: var(--primary-color);
+    font-weight: 700;
+    line-height: 1.2em;
+    text-shadow: 20px 11px 6px black;
 }
 
 .text-2-2 {
-    font-size: clamp(1.1em, 2vw + 0.7em, 2.9em);
+    font-size: clamp(1.1em, calc(2vw + 0.7em), 2.9em);
     position: absolute;
     top: 60%;
     right: 4%;
@@ -287,53 +219,53 @@ p {
     text-align: center;
     overflow-x: auto;
     width: 100%;
-    font-size: clamp(1.1em, 1vw + 1em, 1.9em);
+    font-size: clamp(1.1em, calc(1vw + 1em), 1.9em);
+}
 
-    a {
-        background: var(--primary-color);
-        padding: 0.6em 1.2em;
-        font-size: clamp(1.1em, 1vw + 1em, 1.9em);
-        border-radius: 0.7em;
-        margin: 1.5em 0 0 0;
-        display: inline-block;
-        text-align: center;
+.tab-3-content a {
+    background: var(--primary-color);
+    padding: 0.6em 1.2em;
+    font-size: clamp(1.1em, calc(1vw + 1em), 1.9em);
+    border-radius: 0.7em;
+    margin: 1.5em 0 0 0;
+    display: inline-block;
+    text-align: center;
+}
 
-        &:hover {
-            background: #0068d6;
-        }
-    }
+.tab-3-content a:hover {
+    background: #0068d6;
+}
 
-    .table {
-        width: 100%;
-        margin-top: 2rem;
-        border-collapse: collapse;
-        border-spacing: 0;
-    }
+.tab-3-content .table {
+    width: 100%;
+    margin-top: 2rem;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
 
-    .table thead th {
-        text-transform: uppercase;
-        padding: 0.8rem;
-    }
+.tab-3-content .table thead th {
+    text-transform: uppercase;
+    padding: 0.8rem;
+}
 
-    .table tbody {
-        display: table-row-group;
-        vertical-align: middle;
-        border-color: inherit;
-    }
+.tab-3-content .table tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
 
-    .table tbody tr td {
-        color: #999;
-        padding: 0.8rem 1.2rem;
-        text-align: center;
-    }
+.tab-3-content .table tbody tr td {
+    color: #999;
+    padding: 0.8rem 1.2rem;
+    text-align: center;
+}
 
-    .table tbody tr td:first-child {
-        text-align: left;
-    }
+.tab-3-content .table tbody tr td:first-child {
+    text-align: left;
+}
 
-    .table tbody tr:nth-child(odd) {
-        background: #222;
-    }
+.tab-3-content .table tbody tr:nth-child(odd) {
+    background: #222;
 }
 
 .tab-3-content::-webkit-scrollbar {
@@ -400,17 +332,10 @@ p {
     .shownow {
         display: block !important;
         opacity: 1 !important;
-        -webkit-transition: font-size 0.3s ease-in-out;
-        -o-transition: font-size 0.3s ease-in-out;
-        -moz-transition: font-size 0.3s ease-in-out;
         transition: font-size 0.3s ease-in-out;
     }
 
     .tabs {
-        display: -webkit-box !important;
-        display: -webkit-flex !important;
-        display: -moz-box !important;
-        display: -ms-flexbox !important;
         display: flex !important;
         background: var(--dark-color);
         padding-top: 1rem;
@@ -425,25 +350,16 @@ p {
     .tabs .container {
         display: grid;
         color: #ffffff98;
-
-        p {
-            font-size: 1.2em;
-            padding-top: 0.5em;
-        }
-
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 1rem;
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-           -moz-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
-        -webkit-box-pack: center;
-        -webkit-justify-content: center;
-           -moz-box-pack: center;
-            -ms-flex-pack: center;
-                justify-content: center;
+        align-items: center;
+        justify-content: center;
         text-align: center;
+    }
+
+    .tabs .container p {
+        font-size: 1.2em;
+        padding-top: 0.5em;
     }
 
     .tabs .container>div {
