@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todolist</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/todolist.css">
+    <link rel="icon" href="../image/5e16a665adb484a5f8bdb2d6753a4d50543770921.png_1256w_1202h__web-article-pic-removebg-preview (1).png">
+</head>
+<body>
+    <section class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo">Anna<span> Yanami</span></a>
+
+            <img src="../image/menu.svg" alt="open-more" id="more" class="more" />
+
+            <nav>
+                <img src="../image/exit.svg" alt="exit" id="exit" class="exit" />
+
+                <ul class="first-ul">
+                    <li><a href="../index.html">Home</a></li>
+                    <li class="current"><a href="#">Todolist</a></a></li>
+                    <li><a href="#">Pricing</a></li>
+                </ul>
+
+                <ul class="second-ul">
+                    <li><a href="#">Contact</a></li>
+                    <li class="Learn-More"><a href="learn-more.html">Learn More</a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <section class="main">
+        <div class="container">
+            <h1>To do List</h1>
+            <p class="subhead">そんな青春が私にあったとしたらですね</p>
+            <div class="unfinish">
+                <div class = "top">
+                    <img src="../image/chevron-down-outline.svg" alt="open" class="open-unfinish">
+                    <h2>Unfinished Tasks</h2>
+                </div>
+    
+                <div class="container">
+                    <div class="task">
+                        <button class="complete-btn">Complete</button>
+                        <span>写点代码</span>
+                    </div>
+                    <div class="task">
+                        <button class="complete-btn">Complete</button>
+                        <span>学英语</span>
+                    </div>
+                    <div class="task">
+                        <button class="complete-btn">Complete</button>
+                        <span>写日记</span>
+                    </div>
+                    <div class="task">
+                        <button class="complete-btn">Complete</button>
+                        <span>运动</span>
+                    </div>
+                </div>
+            </div>
+            <div class="finish">
+                <div class="top">
+                    <img src="../image/chevron-down-outline.svg" alt="open" class="open-finish">
+                    <h2>Finished Tasks</h2>
+                </div>
+    
+                <div class="container">
+
+                </div>
+            </div>
+            <div class="add">
+                <div class="container">
+                    <input type="text" id="task-input" placeholder="Add a new task">
+                    <button id="add-task-btn" class="add-task">Add Task</button>
+                </div>
+            </div>
+        </div>
+        <img src="../image/0b5f1da0cd11728b635a65028efcc3cec3fd2c78-removebg.png" alt="" class="so"/>
+    </section>
+
+    <section class="progress-bars">
+        <div class="container">
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progressBar"></div>
+                <div class="present" id="progressPercent">0%</div> 
+            </div>  
+        </div>
+    </section>
+
+    <section class="footer">
+        <div class="footer-container">
+            <div class="tab-1" id="tab-content-item">
+                <img src="../image/PixPin_2024-09-03_09-42-47-removebg-preview (1).png" alt="">
+                <p class="text-1">
+                    <div class="text-1-1"><span class="wen">你</span>学习有点不认真了喔</div>
+                    <div class="text-1-2">进度只达成了<span class="ba">0%</span></div>
+                    <div class="text-1-3"><span class="ba">八奈见</span>同学有点不高兴</div>
+                    <div class="text-1-4">也不知道为啥<span class="ba">八奈见</span>会关心<span class="wen">你</span>的学习</div>
+                    <div class="text-1-5">但是还是好好回应<span class="ba">她</span>的期待吧</div>
+                </p>
+            </div>
+            <div class="tab-2" id="tab-content-item">
+                <img src="../image/PixPin_2024-07-30_20-26-24.png" alt="">
+                <p class="text-2">
+                    <div class="text-2-1"><span class="wen">你</span>学习态度还可以嘛</div>
+                    <div class="text-2-2">进度达成了<span class="ba">0%</span></div>
+                    <div class="text-2-3"><span class="ba">八奈见</span>同学看起来好像挺高兴的</div>
+                    <div class="text-2-4">明明这是<span class="wen">自己</span>的事情</div>
+                    <div class="text-2-5"><span class="ba">她</span>为什么要关心</div>
+                    <div class="text-2-6">算了，<span class="ba">她</span></span>开心就好</div>
+                </p>
+            </div>
+            <div class="tab-3" id="tab-content-item">
+                <img src="../image/5e16a665adb484a5f8bdb2d6753a4d50543770921.png_1256w_1202h__web-article-pic-removebg-preview (1).png" alt="" class="img1">
+                <img src="../image/87c1462e27dd279ccff5a9cf8265d4a8543770921.png_1256w_1292h__web-article-pic-removebg-preview (1).png" alt="" class="img2">
+                <p class="text-3">
+                    <div class="text-3-1"><span class="wen">你</span>今天真的太好学了</div>
+                    <div class="text-3-2">进度达成了<span class="ba">0%</span></div>
+                    <div class="text-3-3"><span class="wen">你</span>好像想起来<span class="wen">自己</span></div>
+                    <div class="text-3-4">好像和<span class="ba">她</span>打了个赌</div>
+                    <div class="text-3-5">“<span class="ba">八奈见同学</span>”</div>
+                    <div class="text-3-6">“<span class="wen">我</span>喜欢和<span class="ba">你</span>在一起的时间”</div>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <script type="text/javascript" src="../js/todolist.js"></script>
+</body>
+</html>

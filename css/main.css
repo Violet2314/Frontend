@@ -32,7 +32,7 @@ section {
 }
 
 .navbar nav {
-    display: none;
+    display: block;
 }
 
 .navbar .container {
@@ -196,18 +196,19 @@ iframe {
 
 /* 这行代码定义了当 nav 元素具有 menu-btn 类时，它的显示状态为 block。即，当 nav 元素被赋予 menu-btn 类时，它会显示出来。*/
 nav.menu-btn {
-    display: block;
+    right: 0; 
 }
 
 nav {
     position: fixed;
     z-index: 999;
     width: 55%;
-    right: 0;
+    right: -100%;
     top: 0;
     background: #20272e;
     height: 100vh;
     padding: 1em;
+    transition: right 0.5s ease;
 }
 
 nav .first-ul {
