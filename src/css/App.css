@@ -1,0 +1,119 @@
+.main {
+    position: relative;
+    z-index: 9;
+    background: url("../image/PixPin_2024-09-29_15-16-39.png") no-repeat center top/cover;
+    max-height: 70vh;
+    width: 100%;
+    aspect-ratio: 9 / 14;
+    transition: background 0.5s ease, aspect-ratio 0.5s ease;
+}
+
+.main::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0);
+    box-shadow: inset 120px 100px 250px rgba(255, 255, 255, 0), inset -120px -100px 250px #00000050;
+    transition: box-shadow 0.5s ease;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 91;
+    display: flex;
+    /* 使用 flexbox 水平排列元素 */
+    align-items: flex-start;
+    transition: top 0.5s ease, left 0.5s ease;
+
+    /* 确保段落从顶部对齐 */
+    p {
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        line-height: 1.5;
+        /* 保持行高一致 */
+        margin: 0;
+        /* 去掉默认的外边距 */
+        transition: writing-mode 0.5s ease;
+    }
+
+    a {
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.9);
+        border: 3px solid #007af3;
+        font-size: 1.4em;
+        padding: 0.3em 0.4em;
+        font-weight: bold;
+        border-radius: 5em;
+        display: inline-block;
+        transition: background 0.3s ease, border 0.3s ease;
+    }
+
+    a:hover {
+        background: #0068d6;
+    }
+}
+
+.secondary {
+    opacity: 0;
+    font-weight: bold;
+    font-size: clamp(1.2em, calc(1.2vw), 2.2em);
+    color: rgba(255, 255, 255, 0.764);
+    letter-spacing: 0.3em;
+    animation-delay: 4s;
+    animation-name: float-up;
+    animation-timing-function: ease-out;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.primary {
+    opacity: 0;
+    color: rgba(255, 255, 255, 0.764);
+    font-size: clamp(2.5em, calc(1em + 2vw), 3.5em);
+    line-height: 1.3em;
+    font-weight: bold;
+    animation-delay: 4.5s; 
+    animation-name: float-up;
+    animation-timing-function: ease-out;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes float-up {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media screen and (min-width: 1048px){
+    .main{
+        background: url("../image/PixPin_2024-09-30_10-43-24.png") center top/cover;
+        aspect-ratio: 14 / 6;
+        .container{
+            position: absolute;
+            top: 25%;
+            left: 4%;
+            width: 96%;
+            display: flex;
+            flex-direction: column;
+        }
+        p{
+            writing-mode: horizontal-tb;
+            text-orientation: mixed;
+        }
+    }
+}
