@@ -22,16 +22,16 @@
 </template>
 
 <script setup>
-import { onMounted, ref, onUnmounted, nextTick, inject} from 'vue';
+import { onMounted, ref, onUnmounted, nextTick } from 'vue';
 import FaultFont from '../../components/FaultFont.vue';
 import MainIndex from '../../components/MainIndex.vue';
 import LoadInterface from '../../components/LoadInterface.vue';
 import NoticeBoard from '../../components/NoticeBoard.vue'
 import PokerItem from '../../components/PokerItem.vue';
+import { isFirstLoad } from '../../router'; // 导入 isFirstLoad
 
 const scrollbox = ref(null);
 const loadInterfaceRef = ref(null);
-const isFirstLoad = inject('isFirstLoad', true);
 
 const resizeBody = () => {
     if (scrollbox.value) {
