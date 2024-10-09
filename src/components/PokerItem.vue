@@ -34,7 +34,7 @@ const transform_datas = [
 const init = () => {
     for(let i = 0; i < 6; i++){
         const img = new Image();
-        img.src = require(`../pokerphotos/photo_${i}.webp`);
+        img.src = require(`../photos/pokerphotos/photo_${i}.webp`);
         imgs.value.push(img);
     }
 

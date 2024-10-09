@@ -24,12 +24,11 @@ const router = createRouter({
 let isFirstLoad = true;
 
 router.beforeEach((to, from, next) => {
-    console.log(isFirstLoad);
     if (isFirstLoad) {
         // 显示加载动画
         setTimeout(() => {
             isFirstLoad = false; // 只在第一次加载后设置为 false
-        }, 4700);
+        }, 4500);
         next();
     } else {
         // 直接导航，不显示加载动画

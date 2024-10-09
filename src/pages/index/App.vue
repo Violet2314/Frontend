@@ -1,6 +1,5 @@
 <template>
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <LoadInterface :show="isFirstLoad" ref="loadInterfaceRef" />
     <div class="viewbox">
         <div class="scrollbox" ref="scrollbox">
             <div>
@@ -22,16 +21,13 @@
 </template>
 
 <script setup>
-import { onMounted, ref, onUnmounted, nextTick } from 'vue';
+import { onMounted, ref, onUnmounted } from 'vue';
 import FaultFont from '../../components/FaultFont.vue';
 import MainIndex from '../../components/MainIndex.vue';
-import LoadInterface from '../../components/LoadInterface.vue';
 import NoticeBoard from '../../components/NoticeBoard.vue'
 import PokerItem from '../../components/PokerItem.vue';
-import { isFirstLoad } from '../../router'; // 导入 isFirstLoad
 
 const scrollbox = ref(null);
-const loadInterfaceRef = ref(null);
 
 const resizeBody = () => {
     if (scrollbox.value) {
@@ -49,24 +45,6 @@ onMounted(() => {
     resizeBody();
     window.addEventListener('scroll', scroll);
     window.addEventListener('resize', resizeBody);
-    window.addEventListener('load', () => {
-        nextTick(() => {
-            if (loadInterfaceRef.value && loadInterfaceRef.value.$refs) {
-                const { downwave, context, image1, image2, image3, image4, notfoundteam } = loadInterfaceRef.value.$refs;
-                if (downwave && context) {
-                    // 播放动画
-                    downwave.style.animation = 'down 3s 1s ease-out forwards';
-                    context.style.animation = 'out 1.5s 3s ease-out forwards';
-                    notfoundteam.style.animation = 'out 1.5s ease-out forwards'
-                    // 添加图片的动画
-                    image1.style.animation = 'move-1 5s infinite';
-                    image2.style.animation = 'move-2 4s infinite';
-                    image3.style.animation = 'move-3 3.5s infinite';
-                    image4.style.animation = 'move-4 3s infinite';
-                }
-            }
-        });
-    });
 });
 onUnmounted(() => {
     window.removeEventListener('scroll', scroll);

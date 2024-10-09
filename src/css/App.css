@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 .main {
     position: relative;
     z-index: 9;
@@ -30,35 +32,35 @@
     /* 使用 flexbox 水平排列元素 */
     align-items: flex-start;
     transition: top 0.5s ease, left 0.5s ease;
-
     /* 确保段落从顶部对齐 */
-    p {
-        writing-mode: vertical-rl;
-        text-orientation: upright;
-        line-height: 1.5;
-        /* 保持行高一致 */
-        margin: 0;
-        /* 去掉默认的外边距 */
-        transition: writing-mode 0.5s ease;
-    }
+}
 
-    a {
-        writing-mode: vertical-rl;
-        text-orientation: upright;
-        text-decoration: none;
-        color: rgba(255, 255, 255, 0.9);
-        border: 3px solid #007af3;
-        font-size: 1.4em;
-        padding: 0.3em 0.4em;
-        font-weight: bold;
-        border-radius: 5em;
-        display: inline-block;
-        transition: background 0.3s ease, border 0.3s ease;
-    }
+.container p {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    line-height: 1.5;
+    /* 保持行高一致 */
+    margin: 0;
+    /* 去掉默认的外边距 */
+    transition: writing-mode 0.5s ease;
+}
 
-    a:hover {
-        background: #0068d6;
-    }
+.container a {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.9);
+    border: 3px solid #007af3;
+    font-size: 1.4em;
+    padding: 0.3em 0.4em;
+    font-weight: bold;
+    border-radius: 5em;
+    display: inline-block;
+    transition: background 0.3s ease, border 0.3s ease;
+}
+
+.container a:hover {
+    background: #0068d6;
 }
 
 .secondary {
@@ -67,7 +69,7 @@
     font-size: clamp(1.2em, calc(1.2vw), 2.2em);
     color: rgba(255, 255, 255, 0.764);
     letter-spacing: 0.3em;
-    animation-delay: 4s;
+    animation-delay: 1s;
     animation-name: float-up;
     animation-timing-function: ease-out;
     animation-duration: 1s;
@@ -80,7 +82,7 @@
     font-size: clamp(2.5em, calc(1em + 2vw), 3.5em);
     line-height: 1.3em;
     font-weight: bold;
-    animation-delay: 4.5s; 
+    animation-delay: 1.5s;
     animation-name: float-up;
     animation-timing-function: ease-out;
     animation-duration: 1s;
@@ -99,21 +101,23 @@
     }
 }
 
-@media screen and (min-width: 1048px){
-    .main{
+@media screen and (min-width: 968px) {
+    .main {
         background: url("../image/PixPin_2024-09-30_10-43-24.png") center top/cover;
         aspect-ratio: 14 / 6;
-        .container{
-            position: absolute;
-            top: 25%;
-            left: 4%;
-            width: 96%;
-            display: flex;
-            flex-direction: column;
-        }
-        p{
-            writing-mode: horizontal-tb;
-            text-orientation: mixed;
-        }
+    }
+
+    .main .container {
+        position: absolute;
+        top: 25%;
+        left: 4%;
+        width: 96%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main p {
+        writing-mode: horizontal-tb;
+        text-orientation: mixed;
     }
 }

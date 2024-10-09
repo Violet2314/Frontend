@@ -2,7 +2,7 @@
     <div class="Load" v-if="show">
         <div class="notfound-team" ref="notfoundteam">
             <img src="../assets/404team.png" alt="" class="glitch">
-            <FaultFont :content="'Team 404 never breaks a promise'" ref="faultFontRef" />
+            <FaultFont :content="'Team 404 never breaks a promise'" ref="faultFontRef"/>
         </div>
         <div class="startwaves" id="downout" ref="downwave" @animationend="hideDownwave">
             <div class="waves">
@@ -12,7 +12,7 @@
                 <img src="../image/wave-5.svg" id="shape" alt="" ref="image4">
             </div>
         </div>
-        <div class="context" ref="context">
+        <div class="context" ref="context" @animationend="hideDowncontext">
             <h1>Memento Mori</h1>
             <p>Remember, You Will Die.<br />Time never waits.<br />It delivers all equally to the same end.</p>
         </div>
@@ -34,6 +34,11 @@ const notfoundteam = ref(null);
 const hideDownwave = () => {
     if (downwave.value) {
         downwave.value.style.display = 'none';
+    }
+};
+
+const hideDowncontext = () => {
+    if(context.value){
         context.value.style.display = 'none';
     }
 };

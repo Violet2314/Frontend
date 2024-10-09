@@ -82,7 +82,7 @@ defineExpose({ fault });//暴露方法
 
 .faulttext {
     position: absolute;
-    font-family: Impact;
+    font-family: 'Anton', Impact;
     letter-spacing: 0.5rem;
     user-select: none;
     font-size: 3rem;
