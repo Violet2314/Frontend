@@ -1,5 +1,5 @@
 <template>
-    <div class="infinitebox">
+    <div class="infinitebox" ref="infiniteComponent">
         <div class="photos" ref="container" @mousedown="onMousedown" @mouseup="onMouseup" @mouseleave="onMouseleave"
             @mousemove="onMousemove" @touchstart="onTouchstart" @touchend="onTouchend" @touchmove="onTouchmove">
             <div class="photos_line">
@@ -23,9 +23,7 @@
 
 <script setup>
 import gsap from 'gsap';
-import { onMounted, ref, onBeforeUnmount, nextTick } from 'vue';
-
-console.log(window.innerWidth / window.innerHeight);
+import { onMounted, ref, onBeforeUnmount, nextTick, onActivated} from 'vue';
 
 const container = ref(null);
 const img_data = ref([]);
@@ -42,6 +40,7 @@ const ifmoveable = ref(false);
 const standard_width = ref(1440);
 const scale_nums = ref(1);
 const mediaQuery = window.matchMedia("(max-width: 800px)");
+const wokk = ref(true);
 
 const resize = () => {
     let imgs = [...document.querySelectorAll(".photos_line_photo")];
@@ -57,7 +56,6 @@ const resize = () => {
         standard_width.value = 1440;
     }
     scale_nums.value = document.body.offsetWidth / standard_width.value;
-    console.log(standard_width.value)
     container.value.style.transform = `scale(${scale_nums.value})`;
     gsap.to(imgs, { transform: `translate(0,0)`, duration: 0, ease: 'power4.out' });
 
@@ -152,6 +150,7 @@ const onTouchend = () => {
 };
 
 const init = () => {
+    console.log("init");
     for (let i = 1; i <= 6; i++) {
         const img = new Image();
         img.src = require(`../photos/Infinitesphotos/photo${i}.jpg`);
@@ -170,7 +169,10 @@ const init = () => {
 };
 
 onMounted(() => {
-    init();
+    if(wokk.value){
+        init();
+        wokk.value = false;
+    }
     nextTick(() => {
         resize();
         window.addEventListener('resize', resize);
@@ -178,6 +180,10 @@ onMounted(() => {
 });
 onBeforeUnmount(() => {
     window.removeEventListener('resize', resize);
+});
+onActivated(() => {
+    //缓存执行
+    console.log("组件激活");
 });
 </script>
 
@@ -272,6 +278,7 @@ onBeforeUnmount(() => {
     .photos_line_photo {
         font-size: 1.3px;
     }
+
     .infinitebox {
         aspect-ratio: 9 / 13;
     }

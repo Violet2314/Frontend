@@ -7,12 +7,12 @@ const routes = [
     {
         path: '/',
         name: 'Index',
-        component: IndexPage
+        component: IndexPage,
     },
     {
         path: '/function',
         name: 'Function',
-        component: FunctionPage
+        component: FunctionPage,
     }
 ];
 
@@ -35,5 +35,6 @@ router.beforeEach((to, from, next) => {
         next();
     }
 });
-export {isFirstLoad};
+
+export { isFirstLoad };
 export default router;

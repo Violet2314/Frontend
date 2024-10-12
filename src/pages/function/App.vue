@@ -1,6 +1,6 @@
 <template>
     <div class="viewbox">
-        <div class="scrollbox" ref="scrollbox">
+        <div class="scrollbox" ref="scrollbox"> 
             <FaultFont :content="'Absolute aesthetic'" class="aes" @click="navigateToPage('/')" />
             <InfiniteSliding />
         </div>
@@ -10,8 +10,12 @@
 <script setup>
 import FaultFont from '@/components/FaultFont.vue';
 import InfiniteSliding from '@/components/InfiniteSliding.vue';
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted, defineOptions} from 'vue';
 import { useRouter } from 'vue-router';
+
+defineOptions({
+  name: 'FunctionPage' //组合式定义组件名称的方法
+});
 
 const router = useRouter();
 const scrollbox = ref(null);

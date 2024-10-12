@@ -21,7 +21,7 @@
 </template>
 
 <script setup>
-import { onMounted, ref, onUnmounted } from 'vue';
+import { onMounted, ref, onUnmounted} from 'vue';
 import FaultFont from '../../components/FaultFont.vue';
 import MainIndex from '../../components/MainIndex.vue';
 import NoticeBoard from '../../components/NoticeBoard.vue'

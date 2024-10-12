@@ -1,14 +1,22 @@
 <template>
     <div>
         <LoadInterface :show="isFirstLoad" ref="loadInterfaceRef" />
-        <Loading ref="loadingRef" :checkLoading="checkLoading" v-show="loadd"/>
+        <Loading ref="loadingRef" :checkLoading="checkLoading" v-show="loadd" />
         <!-- 使用 router-view 作为占位符来切换不同路由的组件 -->
-        <router-view />
+        <!-- 设置缓存 -->
+        <router-view v-slot="{Component,route}">
+            <keep-alive include="FunctionPage">
+                <component
+                    :is="Component"
+                    :key="route.path"
+                />
+            </keep-alive>
+        </router-view>
     </div>
 </template>
 
 <script setup>
-import { onMounted, ref, nextTick} from 'vue';
+import { onMounted, ref, nextTick } from 'vue';
 import Loading from './components/TransitionAnimation.vue';
 import LoadInterface from './components/LoadInterface.vue';
 import { isFirstLoad } from './router'; // 导入 isFirstLoad
@@ -20,13 +28,12 @@ const loadInterfaceRef = ref(null);
 const router = useRouter();
 
 const checkLoading = () => {
-    console.log(!isFirstLoad)
     const timer = setInterval(() => {
         if (document.readyState === 'complete') {
             clearInterval(timer);
             loadingRef.value.outLoading();
         }
-    },300);
+    }, 300);
 };
 
 onMounted(() => {
@@ -53,7 +60,7 @@ onMounted(() => {
             }
             setTimeout(() => {
                 loadd.value = true;
-            },4500);
+            }, 4500);
         });
     });
 })
